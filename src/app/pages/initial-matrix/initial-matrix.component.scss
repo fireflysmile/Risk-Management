@@ -1,0 +1,41 @@
+@import 'colors';
+
+.initial-matrix {
+  padding: 100px;
+  .box {
+    border: 2px dashed $athens-gray;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .icon {
+      width: 100px;
+      height: 100px;
+      background-color: $selago;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      [class*='risk-icon-'] {
+        color: $dodge-blue;
+        font-size: 65px;
+      }
+    }
+    .decimal-style {
+      counter-reset: matrix-step-counter;
+      li {
+        counter-increment: matrix-step-counter;
+        &::before {
+          content: counter(matrix-step-counter);
+          display: inline-block;
+          text-align: center;
+          width: 20px;
+          height: 20px;
+          background-color: $athens-gray2;
+          border-radius: 50%;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
