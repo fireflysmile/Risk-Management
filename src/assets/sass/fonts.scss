@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'riskicon';
+  src:  url('../fonts/riskicon.eot?pqii01');
+  src:  url('../fonts/riskicon.eot?pqii01#iefix') format('embedded-opentype'),
+    url('../fonts/riskicon.ttf?pqii01') format('truetype'),
+    url('../fonts/riskicon.woff?pqii01') format('woff'),
+    url('../fonts/riskicon.svg?pqii01#riskicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="risk-icon-"], [class*=" risk-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'riskicon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.risk-icon-arrow-down:before {
+  content: "\e900";
+}
+.risk-icon-check-circle:before {
+  content: "\e901";
+}
+.risk-icon-close:before {
+  content: "\e902";
+}
+.risk-icon-plus:before {
+  content: "\e903";
+}
+.risk-icon-trash:before {
+  content: "\e904";
+}
