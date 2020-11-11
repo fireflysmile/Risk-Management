@@ -1,11 +1,13 @@
+@import 'colors';
+
 .header {
-  height: 90px;
+  height: 72px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $athens-gray2;
 
   .logo {
     display: inline-block;
-    margin-left: 30px;
+    margin-left: 20px;
   }
 }
