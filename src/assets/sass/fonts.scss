@@ -25,18 +25,42 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.risk-icon-arrow-down:before {
-  content: "\e900";
+.risk-icon-add:before {
+  content: "\e90d";
+}
+.risk-icon-arrow-bottom:before {
+  content: "\e90e";
+}
+.risk-icon-arrow-top:before {
+  content: "\e90f";
+}
+.risk-icon-check:before {
+  content: "\e911";
 }
 .risk-icon-check-circle:before {
   content: "\e901";
 }
 .risk-icon-close:before {
-  content: "\e902";
+  content: "\e910";
+}
+.risk-icon-command:before {
+  content: "\e912";
+}
+.risk-icon-edit:before {
+  content: "\e913";
+}
+.risk-icon-horizontal:before {
+  content: "\e90c";
+}
+.risk-icon-next:before {
+  content: "\e91b";
 }
 .risk-icon-plus:before {
   content: "\e903";
 }
 .risk-icon-trash:before {
   content: "\e904";
+}
+.risk-icon-vertical:before {
+  content: "\e90b";
 }
