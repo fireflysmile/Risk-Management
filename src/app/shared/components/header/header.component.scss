@@ -1,0 +1,11 @@
+.header {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+
+  .logo {
+    display: inline-block;
+    margin-left: 30px;
+  }
+}
