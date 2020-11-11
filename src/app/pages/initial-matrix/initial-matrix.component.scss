@@ -2,15 +2,18 @@
 
 .initial-matrix {
   padding: 100px;
+  display: flex;
+  justify-content: center;
   .box {
     border: 2px dashed $athens-gray;
-    padding: 50px;
+    padding: 72px 100px 80px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    max-width: 1012px;
     .icon {
-      width: 100px;
-      height: 100px;
+      width: 160px;
+      height: 160px;
       background-color: $selago;
       display: flex;
       align-items: center;
@@ -18,22 +21,38 @@
       border-radius: 50%;
       [class*='risk-icon-'] {
         color: $dodge-blue;
-        font-size: 65px;
+        font-size: 72px;
       }
+    }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+    .description {
+      font-size: 18px;
+      color: $jumbo;
+      text-align: center;
+      margin-bottom: 15px;
     }
     .decimal-style {
       counter-reset: matrix-step-counter;
       li {
         counter-increment: matrix-step-counter;
+        padding: 4px 0;
         &::before {
           content: counter(matrix-step-counter);
           display: inline-block;
           text-align: center;
-          width: 20px;
-          height: 20px;
+          width: 32px;
+          height: 32px;
+          line-height: 32px;
+          font-size: 18px;
           background-color: $athens-gray2;
           border-radius: 50%;
           margin-right: 15px;
+          font-weight: 500;
         }
       }
     }
