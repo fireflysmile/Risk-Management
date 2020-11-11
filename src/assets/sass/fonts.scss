@@ -25,6 +25,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.risk-icon-ask-question:before {
+  content: "\e900";
+}
+.risk-icon-copy:before {
+  content: "\e902";
+}
+.risk-icon-delete:before {
+  content: "\e904";
+}
+.risk-icon-edit-note:before {
+  content: "\e905";
+}
+.risk-icon-folder:before {
+  content: "\e906";
+}
+.risk-icon-select-arrow:before {
+  content: "\e907";
+}
+.risk-icon-settings:before {
+  content: "\e908";
+}
 .risk-icon-add:before {
   content: "\e90d";
 }
@@ -57,9 +78,6 @@
 }
 .risk-icon-plus:before {
   content: "\e903";
-}
-.risk-icon-trash:before {
-  content: "\e904";
 }
 .risk-icon-vertical:before {
   content: "\e90b";
