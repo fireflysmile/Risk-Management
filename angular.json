@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "risk-management"
+    }
+  },
+  "defaultProject": "risk-management",
+  "cli": {
+    "analytics": "72d70cb2-ee0c-4dc2-95de-235e13e9f394"
+  }
 }
