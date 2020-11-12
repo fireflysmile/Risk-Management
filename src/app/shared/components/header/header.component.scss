@@ -5,9 +5,31 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid $athens-gray2;
+  position: relative;
 
   .logo {
     display: inline-block;
     margin-left: 20px;
+  }
+
+  .command {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 172px;
+    height: 26px;
+    line-height: 26px;
+    background-color: $mercury;
+    border-radius: 13px;
+    position: absolute;
+    top: 23px;
+    right: 27px;
+    font-size: 13px;
+    color: $dodger-blue;
+    font-weight: 500;
+    [class*='risk-icon-'] {
+      font-size: 12px;
+      margin-right: 8px;
+    }
   }
 }
