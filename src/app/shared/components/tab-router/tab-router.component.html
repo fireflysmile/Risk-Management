@@ -1,0 +1,7 @@
+<app-tab-router-item
+  *ngFor="let item of routes; let i = index"
+  [routerLink]="item.route"
+  routerLinkActive="active">
+  <span number>{{i + 1}}</span>
+  <span label>{{item.label}}</span>
+</app-tab-router-item>

@@ -1,0 +1,9 @@
+@import "mixins";
+@import "colors";
+
+:host {
+  @include flex(stretch, null, null, nowrap);
+  background-color: $dodger-blue;
+  overflow: auto;
+  height: 100%;
+}
