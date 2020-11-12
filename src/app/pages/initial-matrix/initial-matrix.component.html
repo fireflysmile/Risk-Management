@@ -1,13 +1,43 @@
 <div class="initial-matrix">
   <div class="box">
-    <span class="icon">
-      <span class="risk-icon-edit-note"></span>
-    </span>
-    <h3 class="title">No matrix se for this project yet</h3>
-    <p class="description">You will need to set up the Risk Matrix and the Risk Register table. Follow the steps <br> on the screen to complete the setup.</p>
-    <ol class="decimal-style">
-      <li>Select a type off matrix to use</li>
-      <li>Set up the layout off the Risk Register table</li>
-    </ol>
+    <ng-container *ngIf="step === 1">
+      <span class="icon">
+        <span class="risk-icon-edit-note"></span>
+      </span>
+      <h3 class="title">No matrix se for this project yet</h3>
+      <p class="description">You will need to set up the Risk Matrix and the Risk Register table. Follow the steps <br> on the screen to complete the setup.</p>
+      <ol class="decimal-style">
+        <li>Select a type off matrix to use</li>
+        <li>Set up the layout off the Risk Register table</li>
+      </ol>
+    </ng-container>
+    <ng-container *ngIf="step === 2">
+      <span class="close" (click)="goToStep(0)">
+        <span class="risk-icon-close"></span>
+      </span>
+      <h3 class="title">Create Matrix</h3>
+      <div class="flex-content matrix-options">
+        <div class="left">
+          <p class="ask-question">
+            <span class="risk-icon-ask-question"></span>
+            How many matrices will be used <br> in the well program
+          </p>
+        </div>
+        <div class="right">
+          <p class="ask-question">
+            <span class="risk-icon-ask-question"></span>
+            How many matrices will be used <br> in the well program
+          </p>
+          <div *ngFor="let matrix of matrixTypeList">
+            <label class="custom-radio" for="{{matrix.value}}">
+              <input id="{{matrix.value}}" type="radio" class="custom-control-input" value="{{matrix.value}}" name="matrixType" [(ngModel)]="matrixType" required>
+              <span></span>
+              {{matrix.label}}
+            </label>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <button type="button" class="btn-create" (click)="goToStep(step)">Create matrix</button>
   </div>
 </div>
