@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class InitialMatrixComponent implements OnInit {
   step = STEP.INITIAL;
 
-  const matrixTypeList = [
+  matrixTypeList = [
     {
       value: 'new',
       label: 'Create new Matrix'
