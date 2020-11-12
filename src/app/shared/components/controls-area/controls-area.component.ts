@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { initRiskMatrix } from '../../constants/risk-matrix';
+import { RiskMatrix } from '../../models/risk-matrix';
 
 @Component({
   selector: 'app-controls-area',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ControlsAreaComponent implements OnInit {
 
+  riskMatrix: RiskMatrix = initRiskMatrix;
   constructor() { }
 
   ngOnInit(): void {

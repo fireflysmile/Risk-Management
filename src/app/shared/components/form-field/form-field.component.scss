@@ -1,0 +1,19 @@
+@import 'colors';
+:host {
+  width: 100%;
+  display: block;
+}
+label.rm-label-form-field {
+  font-size: 12px;
+  font-weight: bold;
+  color: $text-gray;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: inline-block;
+  span.risk-icon-ask-question {
+    
+  }
+}
+
+.rm-content-form-field {
+}

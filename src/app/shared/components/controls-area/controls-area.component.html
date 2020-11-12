@@ -1,1 +1,24 @@
-<p>controls-area works!</p>
+<div class="rm-controls-area-form">
+  <div class="rm-controls-area-form-left">
+    <div class="rm-controls-area-name">
+      <app-form-field label="Matrix Name" description="matrix name description">
+        <input type="text" [(ngModel)]="riskMatrix.name" >
+      </app-form-field>
+    </div>
+    <div class="rm-controls-area-type-size">
+      <app-form-field label="Matrix Type" description="matrix type description">
+        <input type="text" [(ngModel)]="riskMatrix.type" >
+      </app-form-field>
+      <app-form-field label="Matrix Size" description="matrix size description">
+        <div class="rm-controls-area-size">
+          <input type="text" [(ngModel)]="riskMatrix.size.row" >
+          <span>X</span>
+          <input type="text" [(ngModel)]="riskMatrix.size.column" >
+        </div>
+      </app-form-field>
+    </div>
+  </div>
+  <div class="rm-controls-area-form-right">
+
+  </div>
+</div>
