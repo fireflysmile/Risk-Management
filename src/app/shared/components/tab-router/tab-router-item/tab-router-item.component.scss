@@ -6,6 +6,7 @@
   @include padding(0 25px);
   @include flex(center, center);
   position: relative;
+  height: 56px;
 
   &.active {
     .rm-tab-router {
@@ -15,9 +16,34 @@
       background-color: $emerald;
       color: $white;
     }
-    // label
     .rm-tab-router-label {
       font-weight: bold;
+    }
+  }
+  &.rm-sub-tab {
+    height: 72px;
+    display: flex;
+    flex: 1;
+    .rm-tab-router {
+      border-bottom: 2px solid $white;
+    }
+    .rm-tab-router-number {
+      display: none;
+      position: absolute;
+    }
+    .rm-tab-router-label {
+      color: $text-gray;
+    }
+    &.active {
+      border-bottom: 2px solid $dodger-blue;
+      .rm-tab-router-number {
+        background-color: $emerald;
+        color: $white;
+      }
+      .rm-tab-router-label {
+        font-weight: bold;
+        color: $dodger-blue;
+      }
     }
   }
 }

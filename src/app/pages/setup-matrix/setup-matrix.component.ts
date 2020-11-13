@@ -9,11 +9,14 @@ import { TabRouterItem } from '@components/tab-router/tab-router.component';
 export class SetupMatrixComponent implements OnInit {
   // routes
   routes: TabRouterItem[] = [];
+  subRoutes: TabRouterItem[] = [];
   // root path
+  // tslint:disable-next-line:variable-name
   private readonly _rootPath = '/';
+  // tslint:disable-next-line:variable-name
+  private readonly _rootSubPath = '/setup-matrix';
 
   constructor() {
-    console.log(this._rootPath);
     this.routes = [
       {
         label: 'Set Up Matrix',
@@ -30,6 +33,24 @@ export class SetupMatrixComponent implements OnInit {
       {
         label: 'Review Risk Register Table',
         route: [this._rootPath , 'review-Table'],
+      },
+    ];
+    this.subRoutes = [
+      {
+        label: 'Set Up Matrix',
+        route: [this._rootSubPath],
+      },
+      {
+        label: 'Set Up Matrix',
+        route: [this._rootSubPath , 'two'],
+      },
+      {
+        label: 'Set Up Matrix',
+        route: [this._rootSubPath , 'three'],
+      },
+      {
+        label: 'Set Up Matrix',
+        route: [this._rootSubPath , 'for'],
       },
     ];
   }

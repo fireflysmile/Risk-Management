@@ -15,6 +15,8 @@ export interface TabRouterItem {
 export class TabRouterComponent implements OnInit {
   // tab routes
   @Input() routes: TabRouterItem[] = [];
+  @Input() subTab: false;
+  @Input() options: false;
 
   constructor() { }
 
