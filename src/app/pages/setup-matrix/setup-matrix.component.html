@@ -3,3 +3,12 @@
 <app-tab-router
   [routes]="subRoutes" subTab="true"></app-tab-router>
 <app-controls-area></app-controls-area>
+<app-legend-table [ranks]="legend"></app-legend-table>
+<app-checkbox
+  [(ngModel)]="true"
+></app-checkbox>
+<!-- <app-table
+  [(selectAll)]="selectAll"
+  [columns]="columns"
+  [data]="displayableData"
+  [totalColumnLength]="10"></app-table> -->
