@@ -1,7 +1,17 @@
 <app-tab-router-item
   *ngFor="let item of routes; let i = index"
   [routerLink]="item.route"
-  routerLinkActive="active">
+  routerLinkActive="active"
+  [ngClass]="{ 'rm-sub-tab': subTab, 'rm-main-tab': !subTab }">
   <span number>{{i + 1}}</span>
-  <span label>{{item.label}}</span>
+  <span label>
+    {{item.label}}
+    <ng-container *ngIf="subTab">{{i + 1}}</ng-container>
+  </span>
 </app-tab-router-item>
+<ng-container *ngIf="options">
+  <div class="options">
+    <a href="javascript:;" class="cancel">Cancel</a>
+  </div>
+</ng-container>
+
