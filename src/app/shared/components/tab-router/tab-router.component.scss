@@ -1,0 +1,25 @@
+@import "mixins";
+@import "colors";
+
+:host {
+  @include flex(stretch, null, null, nowrap);
+  background-color: $dodger-blue;
+  position: relative;
+  height: 100%;
+
+  .rm-sub-tab {
+    background-color: $white;
+    border-bottom: 1px solid $athens-gray3;
+  }
+  .options {
+    position: absolute;
+    right: 40px;
+    top: 17px;
+    .cancel {
+      font-size: 14px;
+      color: $white;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}

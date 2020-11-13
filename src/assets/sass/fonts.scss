@@ -25,27 +25,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.risk-icon-ask-question:before {
-  content: "\e900";
-}
-.risk-icon-copy:before {
-  content: "\e902";
-}
-.risk-icon-delete:before {
-  content: "\e904";
-}
-.risk-icon-edit-note:before {
-  content: "\e905";
-}
-.risk-icon-folder:before {
-  content: "\e906";
-}
-.risk-icon-select-arrow:before {
-  content: "\e907";
-}
-.risk-icon-settings:before {
-  content: "\e908";
-}
 .risk-icon-add:before {
   content: "\e90d";
 }
@@ -54,6 +33,9 @@
 }
 .risk-icon-arrow-top:before {
   content: "\e90f";
+}
+.risk-icon-ask-question:before {
+  content: "\e900";
 }
 .risk-icon-check:before {
   content: "\e911";
@@ -65,13 +47,26 @@
   content: "\e910";
 }
 .risk-icon-command:before {
-  content: "\e912";
+  content: "\e909";
+}
+.risk-icon-copy:before {
+  content: "\e902";
+}
+.risk-icon-delete:before {
+  content: "\e904";
 }
 .risk-icon-edit:before {
   content: "\e913";
 }
+.risk-icon-edit-note:before {
+  content: "\e905";
+}
+.risk-icon-folder:before {
+  content: "\e906";
+}
 .risk-icon-horizontal:before {
   content: "\e90c";
+  color: #c7c7cc;
 }
 .risk-icon-next:before {
   content: "\e91b";
@@ -79,6 +74,13 @@
 .risk-icon-plus:before {
   content: "\e903";
 }
+.risk-icon-select-arrow:before {
+  content: "\e907";
+}
+.risk-icon-settings:before {
+  content: "\e908";
+}
 .risk-icon-vertical:before {
   content: "\e90b";
+  color: #c7c7cc;
 }

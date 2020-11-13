@@ -35,7 +35,7 @@ export class InitialMatrixComponent implements OnInit {
     if (n < 2) {
       this.step = n + 1;
     } else {
-      this.router.navigate(['/']);
+      this.router.navigate(['/setup-matrix']);
     }
   }
 
