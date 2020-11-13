@@ -1,5 +1,11 @@
 <!-- label -->
-<label class="rm-label-form-field">{{label}} <span *ngIf="!!description" [class.risk-icon-ask-question]="!!description"></span></label>
+<label class="rm-label-form-field">
+  {{label}} 
+  <span *ngIf="!!description" 
+  [class.risk-icon-ask-question]="!!description">
+    <span class="description">{{description}}</span>
+  </span>
+</label>
 
 <!-- form-field -->
 <div class="rm-content-form-field">

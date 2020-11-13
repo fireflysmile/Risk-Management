@@ -1,3 +1,4 @@
+import { SelectModule } from './../select/select.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -12,7 +13,8 @@ import { FormFieldModule } from '../form-field/form-field.module';
   imports: [
     CommonModule,
     FormFieldModule,
-    FormsModule
+    FormsModule,
+    SelectModule
   ],
   exports: [ControlsAreaComponent]
 })
