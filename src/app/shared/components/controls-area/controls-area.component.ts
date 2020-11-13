@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { initRiskMatrix } from '../../constants/risk-matrix';
+import { InitRiskMatrix, RiskMatrixType, OrderAxis } from '../../constants/risk-matrix';
 import { RiskMatrix } from '../../models/risk-matrix';
 
 @Component({
@@ -8,8 +8,10 @@ import { RiskMatrix } from '../../models/risk-matrix';
   styleUrls: ['./controls-area.component.scss']
 })
 export class ControlsAreaComponent implements OnInit {
-
-  riskMatrix: RiskMatrix = initRiskMatrix;
+  orderAxis = OrderAxis;
+  riskMatrix: RiskMatrix = InitRiskMatrix;
+  riskMatrixType = RiskMatrixType;
+  isShowMatrix = true;
   constructor() { }
 
   ngOnInit(): void {

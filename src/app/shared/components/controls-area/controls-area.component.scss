@@ -1,8 +1,70 @@
 @import 'colors';
 
-.rm-controls-area-form {
+:host {
+  display: block;
   background-color: $bg-gray;
+}
+.input-icon {
+  position: relative;
+  &::after {
+    font-family: 'riskicon';
+    position: absolute;
+  }
+  &.input-icon-after {
+    >input {
+      padding-right: 40px;
+    }
+    &::after {
+      right: 16px;
+      top: 11px;
+    }
+    &.row-order-input {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      >svg {
+        // position: absolute;
+        // right: 16px;
+        // top: 11px;
+      }
+    }
+  }
+  &.input-icon-before {
+    >svg {
+      position: absolute;
+      left: 16px;
+      top: 11px;
+    }
+    >input {
+      padding-left: 50px;
+    }
+    &::after {
+      left: 16px;
+      top: 11px;
+    }
+  }
+  &.row-input {
+    &::after {
+      content: "\e90c";
+      color: #C7C7CC;
+      font-size: 19px;
+    }
+  }
+  &.col-input {
+    &::after {
+      content: "\e90b";
+      color: #C7C7CC;
+      font-size: 19px;
+    }
+  }
+}
+
+
+.rm-controls-area-form {
   padding: 40px;
+  padding-bottom: 0;
   display: flex;
   >.rm-controls-area-form-left {
     width: 40%;
@@ -13,25 +75,93 @@
     }
     >.rm-controls-area-type-size {
       display: flex;
+      >app-form-field:first-of-type {
+        margin-right: 24px;
+      }
       .rm-controls-area-size {
         display: flex;
+        justify-content: space-between;
+        .input-icon {
+          width: calc(50% - 12px);
+        }
+        span {
+          width: 24px;
+          text-align: center;
+          font-size: 14px;
+          line-height: 40px;
+          font-weight: bold;
+          color: $text-gray;;
+        }
       }
     }
   }
   >.rm-controls-area-form-right {
     flex: 1;
     padding-left: 32px;
+    .rm-controls-area-axis {
+      display: flex;
+      gap: 24px;
+      &:first-of-type {
+        margin-bottom: 16px;
+      }
+      app-form-field{
+        &:first-of-type {
+          width: 50%;
+        }
+        &:nth-child(2){
+          width: 30%;
+        }
+        &:nth-child(3){
+          width: 20%;
+        }
+      }
+    }
   }
-  input {
+  input, select, .row-order-input {
+    background-color: $white;
     width: 100%;
     height: 40px;
     border-radius: 4px;
     border: 1px solid $athens-gray;
     font-size: 14px;
     padding-left: 16px;
+    padding-right: 16px;
     box-sizing: border-box;
+    &:focus {
+      border-color: $field-focus
+    }
   }
   input[type="text"] {
 
+  }
+}
+.rm-controls-area-form-cosllapse {
+  text-align: center;
+  padding: 30px;
+  &.hide {
+    padding: 16px;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    color: $field-focus;
+    cursor: pointer;
+    span.risk-icon-arrow-bottom {
+      font-size: 12px;
+      background-color: rgba($field-focus,0.15);
+      padding: 6px;
+      border-radius: 50%;
+      color: $black;
+      margin-right: 12px;
+      font-weight: bold;
+      &.shown {
+        transform: rotate(180deg);
+        display: inline-block;
+      }
+      &.hidden {
+
+      }
+    }
   }
 }
