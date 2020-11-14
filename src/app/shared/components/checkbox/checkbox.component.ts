@@ -29,7 +29,6 @@ export class CheckboxComponent<T> extends FormControlBaseDirective<boolean> impl
   }
 
   ngOnInit(): void {
-    console.log(FormControlBaseDirective);
   }
 
   /**

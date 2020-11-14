@@ -33,8 +33,9 @@
     background-color: $dodger-blue;
 
     [class*='risk-icon-'] {
+      font-size: 12px;
       display: inline-block;
-      color: $black;
+      color: $white;
     }
   }
 

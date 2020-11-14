@@ -29,7 +29,6 @@ export class FormControlBaseDirective<T> implements AfterViewInit, ControlValueA
     @Self() @Optional() public ngControl: NgControl,
     protected changeDetectorRef: ChangeDetectorRef,
   ) {
-    console.log(ngControl);
     if (ngControl) {
       ngControl.valueAccessor = this;
     }
@@ -52,7 +51,6 @@ export class FormControlBaseDirective<T> implements AfterViewInit, ControlValueA
    * @param value value to set
    */
   setValue(value: T): void {
-    console.log(value);
     this.ngControl.control.setValue(value);
   }
 
