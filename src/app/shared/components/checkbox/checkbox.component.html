@@ -1,0 +1,16 @@
+<!-- checkbox -->
+<div
+  [class.rm-checked]="isChecked"
+  [class.rm-disabled]="disabled"
+  class="rm-checkbox">
+  <!-- check icon -->
+  <span class="risk-icon-check"></span>
+</div>
+
+<!-- label -->
+<div
+  #label
+  [style.display]="label.childNodes.length > 0 ? 'block' : 'none'"
+  class="rm-checkbox-label">
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,12 @@
+<div
+  *ngFor="let item of ranks"
+  class="rank">
+  <span
+    class="rank-color"
+    [ngClass]="{ 'medium': item.numberStart > 2, 'high': item.numberStart > 4 }"
+  ></span>
+  <span>
+    {{item.label}}
+    {{item.numberStart}} - {{item.numberEnd}}
+  </span>
+</div>

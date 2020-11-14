@@ -1,0 +1,27 @@
+@import "mixins";
+@import "colors";
+
+:host {
+  @include clickable(true);
+  @include padding(0 25px);
+  @include flex(center, center);
+  .rank {
+    @include flex(center, center);
+    margin-right: 32px;
+    font-size: 14px;
+    .rank-color {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $emerald;
+      margin-right: 12px;
+      &.medium {
+        background-color: $supernova;
+      }
+      &.high {
+        background-color: $red-orange;
+      }
+    }
+  }
+}

@@ -9,7 +9,9 @@
       "@env/*": ["src/environments/*"],
       "@configs/*": ["src/app/configs/*"],
       "@components/*": ["src/app/shared/components/*"],
-      "@directives/*": ["src/app/shared/directives/*"]
+      "@directives/*": ["src/app/shared/directives/*"],
+      "@utils/*": ["src/app/utils/*"],
+      "@services/*": ["src/app/shared/services/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
