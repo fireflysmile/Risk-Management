@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SelectComponent } from './select.component';
 import { OptionComponent } from './option/option.component';
-import {AutoScrollModule} from '../../directives/auto-scroll/auto-scroll.module';
-import {AutoCloserModule} from '../../directives/auto-closer/auto-closer.module';
-import {AutoPositionerModule} from '../../directives/auto-positioner/auto-positioner.module';
+import { AutoScrollModule } from '@directives/auto-scroll/auto-scroll.module';
+import { AutoCloserModule } from '@directives/auto-closer/auto-closer.module';
+import { AutoPositionerModule } from '@directives/auto-positioner/auto-positioner.module';
 
 
 
@@ -21,7 +21,6 @@ import {AutoPositionerModule} from '../../directives/auto-positioner/auto-positi
   ],
   imports: [
     CommonModule,
-    FormsModule,
     AutoScrollModule,
     AutoCloserModule,
     AutoPositionerModule

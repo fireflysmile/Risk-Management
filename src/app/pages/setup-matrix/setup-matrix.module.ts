@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { SetupMatrixComponent } from './setup-matrix.component';
 import { SetupMatrixRoutingModule } from './setup-matrix-routing.module';
 import { ControlsAreaModule } from '@components/controls-area/controls-area.module';
@@ -16,7 +15,6 @@ import { CheckboxModule } from '@components/checkbox/checkbox.module';
     ControlsAreaModule,
     TabRouterModule,
     LegendTableModule,
-    FormsModule,
     CheckboxModule
   ]
 })
