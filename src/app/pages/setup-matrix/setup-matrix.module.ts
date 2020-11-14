@@ -8,6 +8,7 @@ import { TabRouterModule } from '@components/tab-router/tab-router.module';
 
 import { LegendTableModule } from '@components/legend-table/legend-table.module';
 import { CheckboxModule } from '@components/checkbox/checkbox.module';
+import { SetupMatrixModalModule } from '@components/setup-matrix-modal/setup-matrix-modal.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CheckboxModule } from '@components/checkbox/checkbox.module';
     TabRouterModule,
     MatrixTableModule,
     LegendTableModule,
-    CheckboxModule
+    CheckboxModule,
+    SetupMatrixModalModule
   ]
 })
 export class SetupMatrixModule { }

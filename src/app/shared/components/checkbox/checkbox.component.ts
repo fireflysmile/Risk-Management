@@ -36,7 +36,6 @@ export class CheckboxComponent<T> extends FormControlBaseDirective<boolean> impl
    * @param value value to set
    */
   writeValue(value: boolean): void {
-    console.log(value);
     this.isChecked = value;
   }
 
