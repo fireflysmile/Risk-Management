@@ -78,7 +78,9 @@ export class SetupMatrixComponent implements OnInit {
       },
     ];
   }
-
+  
+  ngOnInit(): void {}
+  
   /**
    * open modal
    */
@@ -97,5 +99,7 @@ export class SetupMatrixComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  setMatrix(e): void {
+    console.log(e);
+  }
 }

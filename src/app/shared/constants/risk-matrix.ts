@@ -1,7 +1,7 @@
 import { RiskMatrix, SizeRiskMatrix } from '../models/risk-matrix';
 export const InitSizeRiskMatrix: SizeRiskMatrix = {
-  row: 1,
-  column: 1
+  row: 0,
+  column: 0
 };
 
 export const InitRiskMatrix: RiskMatrix = {
@@ -9,14 +9,18 @@ export const InitRiskMatrix: RiskMatrix = {
   type: '',
   size: InitSizeRiskMatrix,
   x: {
-    value: 'x axis',
+    label: '',
     order: 'Ascending Order',
-    count: 0
+    count: 0,
+    criteriaData: [],
+    prefix: 'P'
   },
   y: {
-    value: 'y axis',
+    label: '',
     order: 'Descending Order',
-    count: 1
+    count: 0,
+    criteriaData: [],
+    prefix: 'T'
   }
 
 };

@@ -1,0 +1,36 @@
+@import 'colors';
+
+.matrix-table {
+  table.rm-tbl {
+    >tr {
+      > td {
+        &.rm-vertical-table-head {
+          background-color: $table-head-gray;
+          color: $white;
+          font-weight: bold;
+          text-transform: uppercase;
+          width: 35px;
+          >p {
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            line-height: 34.4px;
+          };
+        }
+        &.rm-horizon-table-head {
+          background-color: $table-head-gray;
+          color: $white;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+        &.axis-index-risk-matrix {
+          background-color: $bg-gray;
+          color: $text-gray;
+          font-weight: bold;
+          &.axis-index-risk-matrix-y {
+            max-width: 50px;
+          }
+        }
+      }
+    }
+  }
+}
