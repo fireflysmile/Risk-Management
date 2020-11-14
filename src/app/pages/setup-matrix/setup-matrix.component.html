@@ -2,4 +2,5 @@
   [routes]="routes" options="true"></app-tab-router>
 <app-tab-router
   [routes]="subRoutes" subTab="true"></app-tab-router>
-<app-controls-area></app-controls-area>
+<app-controls-area (setupMatrix)="setMatrix($event)"></app-controls-area>
+<app-matrix-table></app-matrix-table>

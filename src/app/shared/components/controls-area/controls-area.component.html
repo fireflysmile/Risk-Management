@@ -2,7 +2,7 @@
   <div class="rm-controls-area-form-left">
     <div class="rm-controls-area-name">
       <app-form-field label="Matrix Name" description="Lorem ipsum dolor sit amet consectetuer description">
-        <input type="text" [(ngModel)]="riskMatrix.name" >
+        <input type="text" [(ngModel)]="riskMatrix.name" (keyup)="setupMatrix.emit(riskMatrix)">
       </app-form-field>
     </div>
     <div class="rm-controls-area-type-size">
@@ -11,16 +11,24 @@
             [autoWidth]="false"
             [options]="riskMatrixType"
             [(ngModel)]="riskMatrix.type"
-            placeholder="- Select -"></app-select>
+            placeholder="- Select -"
+            (change)="setupMatrix.emit(riskMatrix)"
+            ></app-select>
       </app-form-field>
       <app-form-field label="Matrix Size" description="Lorem ipsum dolor sit amet consectetuer description">
         <div class="rm-controls-area-size">
           <div class="row-input input-icon-after input-icon">
-            <input type="text" [(ngModel)]="riskMatrix.size.row" >
+            <input type="text" [(ngModel)]="riskMatrix.size.row" 
+            (keyup)="checkPositiveInt($event); setupMatrix.emit(riskMatrix)" 
+            (keypress)="checkPositiveInt($event); setupMatrix.emit(riskMatrix)" 
+            (change)="checkNull($event); setupMatrix.emit(riskMatrix)" >
           </div>
           <span>X</span>
           <div class="col-input input-icon-after input-icon">
-            <input type="text" [(ngModel)]="riskMatrix.size.column" >
+            <input type="text" [(ngModel)]="riskMatrix.size.column" 
+            (keyup)="checkPositiveInt($event); setupMatrix.emit(riskMatrix)" 
+            (keypress)="checkPositiveInt($event); setupMatrix.emit(riskMatrix)" 
+            (change)="checkNull($event); setupMatrix.emit(riskMatrix)" >
           </div>
         </div>
       </app-form-field>
@@ -39,7 +47,7 @@
             <rect width="5" height="5" transform="translate(7 14)" fill="#e5e5ea"/>
             <rect width="5" height="5" transform="translate(14 14)" fill="#e5e5ea"/>
           </svg>          
-          <input type="text" [(ngModel)]="riskMatrix.y.value" >
+          <input type="text" [(ngModel)]="riskMatrix.y.value" (keyup)="setupMatrix.emit(riskMatrix)" >
         </div>
       </app-form-field>
       <app-form-field label="Order" description="Lorem ipsum dolor sit amet consectetuer description">
@@ -59,7 +67,7 @@
       </app-form-field>
       <app-form-field label="Column" description="Lorem ipsum dolor sit amet consectetuer description">
         <div class="col-input input-icon-after input-icon">
-          <input type="text" [(ngModel)]="riskMatrix.y.count" >
+          <input type="text" [(ngModel)]="riskMatrix.y.count" (keyup)="checkPositiveInt($event)" (change)="checkNull($event)">
         </div>
       </app-form-field>
     </div>
@@ -75,7 +83,7 @@
             <rect width="5" height="5" transform="translate(7 14)" fill="#e5e5ea"/>
             <rect width="5" height="5" transform="translate(14 14)" fill="#e5e5ea"/>
           </svg>
-          <input type="text" [(ngModel)]="riskMatrix.x.value" >
+          <input type="text" [(ngModel)]="riskMatrix.x.value" (keyup)="setupMatrix.emit(riskMatrix)">
         </div>
       </app-form-field>
       <app-form-field label="Order" description="Lorem ipsum dolor sit amet consectetuer description">
@@ -95,7 +103,7 @@
       </app-form-field>
       <app-form-field label="Row" description="Lorem ipsum dolor sit amet consectetuer description">
         <div class="row-input input-icon-after input-icon">
-          <input type="text" [(ngModel)]="riskMatrix.x.count" >
+          <input type="text" [(ngModel)]="riskMatrix.x.count" (keyup)="checkPositiveInt($event)" (change)="checkNull($event)">
         </div>
       </app-form-field>
     </div>

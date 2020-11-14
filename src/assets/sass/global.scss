@@ -1,7 +1,27 @@
+@import 'colors';
+@import 'mixins';
+
 [class*='flex-'] {
   display: flex;
 }
 [class*='flex-column-'] {
   display: flex;
   flex-direction: column;
+}
+table {
+  &.rm-tbl {
+    width: 100%;
+    >tr {
+      > td, th {
+        border: 1px solid $athens-gray;
+        padding: 10px;
+        text-align: center;
+        // @include ellipsis;
+      }
+      >th {
+        background-color: rgba(#007AFF, 5%);
+        font-weight: bold;
+      }
+    }
+  }
 }
