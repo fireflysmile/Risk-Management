@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TabRouterItem } from '@components/tab-router/tab-router.component';
 import { Ranks } from '@components/legend-table/legend-table.component';
+import { ModalService } from '@components/modal/modal.service';
+import { SetupMatrixModalComponent, SetupMatrixModal } from '@components/setup-matrix-modal/setup-matrix-modal.component';
 
 @Component({
   selector: 'app-setup-matrix',
@@ -19,7 +21,9 @@ export class SetupMatrixComponent implements OnInit {
   // tslint:disable-next-line:variable-name
   private readonly _rootSubPath = '/setup-matrix';
 
-  constructor() {
+  constructor(
+    private modalService: ModalService,
+  ) {
     this.routes = [
       {
         label: 'Set Up Matrix',
@@ -73,6 +77,24 @@ export class SetupMatrixComponent implements OnInit {
         numberEnd: 9,
       },
     ];
+  }
+
+  /**
+   * open modal
+   */
+  openModal(): void {
+    this.modalService.open(SetupMatrixModalComponent, {
+      data: {
+        content: `You have selected to reset the password of:
+          A link to set new password will be sent to
+          registered email ID of the user
+          Are you sure you want to continue?
+        `
+      } as SetupMatrixModal,
+      onClose: res => {
+        
+      }
+    });
   }
 
   ngOnInit(): void {}

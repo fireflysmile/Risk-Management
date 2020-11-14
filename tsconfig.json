@@ -10,7 +10,7 @@
       "@configs/*": ["src/app/configs/*"],
       "@components/*": ["src/app/shared/components/*"],
       "@directives/*": ["src/app/shared/directives/*"],
-      "@utils/*": ["src/app/utils/*"],
+      "@utils/*": ["src/app/shared/utils/*"],
       "@services/*": ["src/app/shared/services/*"]
     },
     "outDir": "./dist/out-tsc",
