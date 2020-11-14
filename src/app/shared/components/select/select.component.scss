@@ -1,0 +1,157 @@
+@import "colors";
+
+:host {
+  position: relative;
+  display: block;
+}
+
+// select
+.ts-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 4px;
+  height: 40px;
+  padding: 10px 16px;
+  border: 1px solid $athens-gray;
+  cursor: pointer;
+
+  // set label flex properties
+  .ts-select-label {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+  }
+
+  // icon margin
+  svg {
+    margin-left: 10px;
+  }
+
+  span.risk-icon-arrow-bottom {
+    font-size: 20px;
+  }
+
+  // opened
+  &.ts-opened {
+    border: 1px solid $field-focus;
+
+    // opened icon
+    svg, span.risk-icon-arrow-bottom {
+      transform: rotate(180deg);
+    }
+  }
+
+  // error
+  &.ts-error {
+    border-color: $red;
+
+    .ts-select-label {
+      color: $red;
+    }
+  }
+
+  // disabled
+  &.ts-disabled {
+    background-color: rgba($black, .05);
+    cursor: default;
+
+    // disabled label
+    .ts-select-label {
+      color: rgba($black, .5);
+    }
+
+    // disabled icon
+    svg {
+      path {
+        fill: rgba($black, .5);
+      }
+    }
+  }
+}
+
+// select label
+.ts-select-label {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: calc(100% - 36px);
+  font-size: 14px;
+  font-weight: 400;
+  color: $black;
+
+  // placeholder
+  &.ts-placeholder {
+    color: $text-gray;
+  }
+
+  // cancelable
+  &.ts-cancelable {
+    max-width: calc(100% - 20px - 30px);
+  }
+}
+
+// typeahead input
+.cm-typeahead-input {
+  border-color: $field-focus;
+  background-color: $white;
+  height: 26px;
+  user-select: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: $black;
+  width: 100%;
+}
+
+// select option item height
+$select-option-height: 34px;
+
+// option item max height
+$select-options-max-height: calc(#{$select-option-height} * 5);
+
+// select options
+.ts-select-options {
+  position: fixed;
+  left: 0;
+  top: 100%;
+  background-color: $white;
+  box-shadow: 0 1px 15px rgba($black, .15);
+  max-height: $select-options-max-height;
+  overflow: auto;
+  z-index: 5;
+  visibility: hidden;
+
+  ::ng-deep {
+    // option item
+    app-option {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      font-size: 14px;
+      height: $select-option-height;
+      color: $black;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color .1s;
+
+      // hover
+      &:hover {
+        background-color: rgba($black, .05);
+      }
+
+      // selected
+      &.ts-selected {
+        color: $curious-blue;
+      }
+    }
+  }
+}

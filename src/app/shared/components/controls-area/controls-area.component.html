@@ -1,24 +1,113 @@
-<div class="rm-controls-area-form">
+<div class="rm-controls-area-form" *ngIf="isShowMatrix">
   <div class="rm-controls-area-form-left">
     <div class="rm-controls-area-name">
-      <app-form-field label="Matrix Name" description="matrix name description">
+      <app-form-field label="Matrix Name" description="Lorem ipsum dolor sit amet consectetuer description">
         <input type="text" [(ngModel)]="riskMatrix.name" >
       </app-form-field>
     </div>
     <div class="rm-controls-area-type-size">
-      <app-form-field label="Matrix Type" description="matrix type description">
-        <input type="text" [(ngModel)]="riskMatrix.type" >
+      <app-form-field label="Matrix Type" description="Lorem ipsum dolor sit amet consectetuer description">
+        <app-select
+            [autoWidth]="false"
+            [options]="riskMatrixType"
+            [(ngModel)]="riskMatrix.type"
+            placeholder="- Select -"></app-select>
       </app-form-field>
-      <app-form-field label="Matrix Size" description="matrix size description">
+      <app-form-field label="Matrix Size" description="Lorem ipsum dolor sit amet consectetuer description">
         <div class="rm-controls-area-size">
-          <input type="text" [(ngModel)]="riskMatrix.size.row" >
+          <div class="row-input input-icon-after input-icon">
+            <input type="text" [(ngModel)]="riskMatrix.size.row" >
+          </div>
           <span>X</span>
-          <input type="text" [(ngModel)]="riskMatrix.size.column" >
+          <div class="col-input input-icon-after input-icon">
+            <input type="text" [(ngModel)]="riskMatrix.size.column" >
+          </div>
         </div>
       </app-form-field>
     </div>
   </div>
   <div class="rm-controls-area-form-right">
-
+    <div class="rm-controls-area-axis">
+      <app-form-field label="Value for Y Axis" description="Lorem ipsum dolor sit amet consectetuer description">
+        <div class="col-val-input input-icon-before input-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
+            <rect width="5" height="19" fill="#c7c7cc"/>
+            <rect width="5" height="5" transform="translate(7)" fill="#e5e5ea"/>
+            <rect width="5" height="5" transform="translate(14)" fill="#e5e5ea"/>
+            <rect width="5" height="5" transform="translate(14 7)" fill="#e5e5ea"/>
+            <rect width="5" height="5" transform="translate(7 7)" fill="#e5e5ea"/>
+            <rect width="5" height="5" transform="translate(7 14)" fill="#e5e5ea"/>
+            <rect width="5" height="5" transform="translate(14 14)" fill="#e5e5ea"/>
+          </svg>          
+          <input type="text" [(ngModel)]="riskMatrix.y.value" >
+        </div>
+      </app-form-field>
+      <app-form-field label="Order" description="Lorem ipsum dolor sit amet consectetuer description">
+        <div class="row-order-input input-icon-after input-icon">
+          <p type="text">{{riskMatrix.y.order}}</p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="14" viewBox="0 0 33 14" *ngIf="riskMatrix.y.order === orderAxis[0]">
+            <text transform="translate(26 11)" font-size="10" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">A</tspan></text>
+            <text transform="translate(0 11)" font-size="10" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">Z</tspan></text>
+            <path d="M0,3.795a.422.422,0,0,0,.422.422H10.574L7.914,6.873a.42.42,0,0,0,.6.593l3.373-3.375a.436.436,0,0,0,0-.6L8.507.123a.421.421,0,0,0-.6.6l2.657,2.657H.419A.416.416,0,0,0,0,3.795Z" transform="translate(10 3)" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+          </svg>          
+          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="14" viewBox="0 0 33 14" *ngIf="riskMatrix.y.order === orderAxis[1]">
+            <text transform="translate(0 11)" font-size="10" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">A</tspan></text>
+            <text transform="translate(27 11)" font-size="10" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">Z</tspan></text>
+            <path d="M0,3.795a.422.422,0,0,0,.422.422H10.574L7.914,6.873a.42.42,0,0,0,.6.593l3.373-3.375a.436.436,0,0,0,0-.6L8.507.123a.421.421,0,0,0-.6.6l2.657,2.657H.419A.416.416,0,0,0,0,3.795Z" transform="translate(11 3)" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+          </svg>
+        </div>
+      </app-form-field>
+      <app-form-field label="Column" description="Lorem ipsum dolor sit amet consectetuer description">
+        <div class="col-input input-icon-after input-icon">
+          <input type="text" [(ngModel)]="riskMatrix.y.count" >
+        </div>
+      </app-form-field>
+    </div>
+    <div class="rm-controls-area-axis">
+      <app-form-field label="Value for X Axis" description="Lorem ipsum dolor sit amet consectetuer description">
+        <div class="row-val-input input-icon-before input-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
+            <rect width="19" height="5" fill="#c7c7cc"/>
+            <rect width="5" height="5" transform="translate(0 7)" fill="#e5e5ea"/>
+            <rect width="5" height="5" transform="translate(14 7)" fill="#e5e5ea"/>
+            <rect width="5" height="5" transform="translate(7 7)" fill="#e5e5ea"/>
+            <rect width="5" height="5" transform="translate(0 14)" fill="#e5e5ea"/>
+            <rect width="5" height="5" transform="translate(7 14)" fill="#e5e5ea"/>
+            <rect width="5" height="5" transform="translate(14 14)" fill="#e5e5ea"/>
+          </svg>
+          <input type="text" [(ngModel)]="riskMatrix.x.value" >
+        </div>
+      </app-form-field>
+      <app-form-field label="Order" description="Lorem ipsum dolor sit amet consectetuer description">
+        <div class="row-order-input input-icon-after input-icon">
+          <p type="text">{{riskMatrix.x.order}}</p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="14" viewBox="0 0 33 14" *ngIf="riskMatrix.x.order === orderAxis[0]">
+            <text transform="translate(26 11)" font-size="10" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">A</tspan></text>
+            <text transform="translate(0 11)" font-size="10" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">Z</tspan></text>
+            <path d="M0,3.795a.422.422,0,0,0,.422.422H10.574L7.914,6.873a.42.42,0,0,0,.6.593l3.373-3.375a.436.436,0,0,0,0-.6L8.507.123a.421.421,0,0,0-.6.6l2.657,2.657H.419A.416.416,0,0,0,0,3.795Z" transform="translate(10 3)" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+          </svg>          
+          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="14" viewBox="0 0 33 14" *ngIf="riskMatrix.x.order === orderAxis[1]">
+            <text transform="translate(0 11)" font-size="10" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">A</tspan></text>
+            <text transform="translate(27 11)" font-size="10" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">Z</tspan></text>
+            <path d="M0,3.795a.422.422,0,0,0,.422.422H10.574L7.914,6.873a.42.42,0,0,0,.6.593l3.373-3.375a.436.436,0,0,0,0-.6L8.507.123a.421.421,0,0,0-.6.6l2.657,2.657H.419A.416.416,0,0,0,0,3.795Z" transform="translate(11 3)" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+          </svg>                    
+        </div>
+      </app-form-field>
+      <app-form-field label="Row" description="Lorem ipsum dolor sit amet consectetuer description">
+        <div class="row-input input-icon-after input-icon">
+          <input type="text" [(ngModel)]="riskMatrix.x.count" >
+        </div>
+      </app-form-field>
+    </div>
   </div>
+</div>
+<div class="rm-controls-area-form-cosllapse" [class.hide]="!isShowMatrix">
+  <button *ngIf="isShowMatrix" (click)="isShowMatrix = !isShowMatrix">
+    <span class="risk-icon-arrow-bottom shown"></span>
+    Hide Controls Area
+  </button>
+  <button *ngIf="!isShowMatrix" (click)="isShowMatrix = !isShowMatrix">
+    <span class="risk-icon-arrow-bottom hidden"></span>
+    Show Controls Area
+  </button>
 </div>

@@ -9,9 +9,28 @@ label.rm-label-form-field {
   color: $text-gray;
   text-transform: uppercase;
   margin-bottom: 8px;
-  display: inline-block;
+  display: block;
+  position: relative;
   span.risk-icon-ask-question {
-    
+    cursor: pointer;
+    line-height: 1.5;
+    .description {
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      padding: 6px 12px;
+      background-color: #000;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 4px;
+      line-height: 19px;
+      display: none;
+    }
+    &:hover {
+      .description {
+        display: initial;
+      }
+    }
   }
 }
 
