@@ -75,5 +75,11 @@ export class SetupMatrixComponent implements OnInit {
     ];
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
+  setMatrix(e): void {
+    console.log(e);
+  }
+
 }

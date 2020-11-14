@@ -13,7 +13,19 @@ export interface SizeRiskMatrix {
 }
 
 export interface AxisProps {
-  value: string;
+  label: string;
   order: 'Ascending Order' | 'Descending Order';
   count: number;
+  criteriaData: CriteriaData[];
+  prefix: string;
 }
+
+export interface CriteriaData {
+  shortTitle: string;
+  title: string | string[];
+  checked: boolean;
+  text: string[];
+}
+// export interface CriteriaDataX {
+//   title: string[];
+// }
