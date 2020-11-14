@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TabRouterItem } from '@components/tab-router/tab-router.component';
+import { Ranks } from '@components/legend-table/legend-table.component';
 
 @Component({
   selector: 'app-setup-matrix',
@@ -10,6 +11,8 @@ export class SetupMatrixComponent implements OnInit {
   // routes
   routes: TabRouterItem[] = [];
   subRoutes: TabRouterItem[] = [];
+  legend: Ranks[] = [];
+
   // root path
   // tslint:disable-next-line:variable-name
   private readonly _rootPath = '/';
@@ -53,6 +56,23 @@ export class SetupMatrixComponent implements OnInit {
         route: [this._rootSubPath , 'for'],
       },
     ];
+    this.legend = [
+      {
+        label: 'Low',
+        numberStart: 1,
+        numberEnd: 2,
+      },
+      {
+        label: 'Medium',
+        numberStart: 3,
+        numberEnd: 4,
+      },
+      {
+        label: 'High',
+        numberStart: 6,
+        numberEnd: 9,
+      },
+    ];
   }
 
   ngOnInit(): void {
@@ -61,4 +81,5 @@ export class SetupMatrixComponent implements OnInit {
   setMatrix(e): void {
     console.log(e);
   }
+
 }

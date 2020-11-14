@@ -1,0 +1,54 @@
+@import "mixins";
+@import "colors";
+
+:host {
+  @include flex(center);
+  cursor: pointer;
+  user-select: none;
+
+  &.rm-disabled {
+    cursor: auto;
+
+    .rm-checkbox:not(.rm-checked) {
+      border-color: #ff0000;
+    }
+  }
+}
+
+// checkbox
+.rm-checkbox {
+  @include flex(center, center);
+  @include border(2px solid $athens-gray);
+  @include box(20px);
+  position: relative;
+  border-radius: 4px;
+  background-color: $white;
+
+  [class*='risk-icon-'] {
+    display: none;
+  }
+
+  // checked state
+  &.rm-checked {
+    background-color: $dodger-blue;
+
+    [class*='risk-icon-'] {
+      font-size: 12px;
+      display: inline-block;
+      color: $white;
+    }
+  }
+
+  // disabled state
+  &.rm-disabled:not(.rm-checked) {
+    @include border(2px solid $athens-gray2);
+    cursor: not-allowed;
+  }
+}
+
+// checkbox label
+.rm-checkbox-label {
+  font-size: 14px;
+  color: $black;
+  margin-left: 5px;
+}

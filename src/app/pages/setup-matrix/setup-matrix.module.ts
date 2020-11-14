@@ -6,6 +6,9 @@ import { SetupMatrixRoutingModule } from './setup-matrix-routing.module';
 import { ControlsAreaModule } from '@components/controls-area/controls-area.module';
 import { TabRouterModule } from '@components/tab-router/tab-router.module';
 
+import { LegendTableModule } from '@components/legend-table/legend-table.module';
+import { CheckboxModule } from '@components/checkbox/checkbox.module';
+
 
 @NgModule({
   declarations: [SetupMatrixComponent],
@@ -14,7 +17,9 @@ import { TabRouterModule } from '@components/tab-router/tab-router.module';
     SetupMatrixRoutingModule,
     ControlsAreaModule,
     TabRouterModule,
-    MatrixTableModule
+    MatrixTableModule,
+    LegendTableModule,
+    CheckboxModule
   ]
 })
 export class SetupMatrixModule { }

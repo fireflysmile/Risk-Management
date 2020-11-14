@@ -10,10 +10,10 @@ import {
   Self,
   ViewChildren
 } from '@angular/core';
-import {NgControl} from '@angular/forms';
-import {OptionComponent} from './option/option.component';
-import {FormControlBaseDirective} from '../../directives/form-control-base/form-control-base.directive';
-import {SubscriptionService} from '../../services/subscription/subscription.service';
+import { NgControl } from '@angular/forms';
+import { OptionComponent } from './option/option.component';
+import { FormControlBaseDirective } from '@directives/form-control-base/form-control-base.directive';
+import { SubscriptionService } from '@services/subscription/subscription.service';
 
 @Component({
   selector: 'app-select',
